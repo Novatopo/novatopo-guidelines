@@ -1,0 +1,10 @@
+{
+  "name": "novatopo-guidelines",
+  "version": "1.0.0",
+  "description": "Novatopo Guidelines 🐧📝",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novatopo/novatopo-guidelines.git"
+  },
+  "license": "MIT"
+}
