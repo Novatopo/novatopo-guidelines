@@ -50,7 +50,7 @@ def test_foo():
 
 - Use [isort](https://github.com/timothycrosley/isort#readme) to automate import sorting using the guidelines below.
 
--Put imports in these groups: future, standard library, third-party libraries, other Django components, local Django component, try/excepts. Sort lines in each group alphabetically by the full module name. Place all **import module** statements before **from module import objects** in each section. Use absolute imports for other Django components and relative imports for local components.
+- Put imports in these groups: future, standard library, third-party libraries, other Django components, local Django component, try/excepts. Sort lines in each group alphabetically by the full module name. Place all **import module** statements before **from module import objects** in each section. Use absolute imports for other Django components and relative imports for local components.
 
 - On each line, alphabetize the items with the upper case items grouped before the lower case items.
 
@@ -171,13 +171,13 @@ class Person(models.Model):
 
 - The order of model inner classes and standard methods should be as follows (noting that these are not all required):
 
--- All database fields
--- Custom manager attributes
--- **class Meta**
--- **def __str__()**
--- **def save()**
--- **def get_absolute_url()**
--- Any custom methods
+  - All database fields
+  - Custom manager attributes
+  - **class Meta**
+  - **def __str__()**
+  - **def save()**
+  - **def get_absolute_url()**
+  * Any custom methods
 
 - If **choices** is defined for a given model field, define each choice as a tuple of tuples, with an all-uppercase name as a class attribute on the model. Example:
 
