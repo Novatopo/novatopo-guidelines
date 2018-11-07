@@ -1,6 +1,6 @@
 # Python Style Guide
 
-*Based on examples from internet plus experiance*
+*Based on examples from internet plus experience*
 
 This is a modern Python style guide born from numerous open source projects and collaborative discussions. You can use this concise guide on its own or with PEP8. This guide focuses on the cutting edge of Python 3.
 
