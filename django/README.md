@@ -174,7 +174,7 @@ class Person(models.Model):
   - All database fields
   - Custom manager attributes
   - **class Meta**
-  - **def __str__()**
+  - **def \_\_str__()**
   - **def save()**
   - **def get_absolute_url()**
   * Any custom methods
@@ -205,6 +205,29 @@ class Owner(models.Model):
     pass
 class Item(models.Model):
     owner = models.ForeignKey(Owner, related_name='items')
+```
+
+- In case of **JSONField** if you give the field a default, ensure it’s a callable such as dict (for an empty default) or a callable that returns a dict (such as a function). Incorrectly using `default={}` creates a mutable default that is shared between all instances of JSONField. **In the other cases you should use {} instead of dict() function.**
+
+```python
+#bad
+class Document(models.Model):
+    body = models.JSONField(default={})
+
+#good
+class Document(models.Model):
+    body = models.ForeignKey(default=dict)
+
+#good
+def get_my_dict():
+    return {
+        'foo': 0,
+        'bar': 1
+    }
+
+class Document(models.Model):
+    body = models.JSONField(default=get_my_dict)
+
 ```
 
 ## Miscellaneous
