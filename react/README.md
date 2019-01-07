@@ -663,7 +663,7 @@ We don’t recommend using indexes for keys if the order of items may change.
 - Component names must be singular
 
 
-- Don't use number inside component name. Replace ~~Button2 by something more clear **ButtonWithImage*
+- Don't use number inside component name. Replace ~~Button2~~ by something more clear **ButtonWithImage**
 > Why? Favor explicit name to improve readability
 
 - All component directory must have this structure
