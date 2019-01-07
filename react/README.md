@@ -21,6 +21,8 @@ This style guide is mostly based on the standards that are currently prevalent i
   1. [Methods](#methods)
   1. [`isMounted`](#ismounted)
   1. [Project Structure](#project-structure)
+    - [Directory structure](#directory-structure)
+    - [NextJS app structure](#NextJS-app-structure)
 
 ## Basic Rules
 
@@ -647,51 +649,63 @@ We don’t recommend using indexes for keys if the order of items may change.
 
   [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
   
- ## Project Structure
-**Rules :**
+## Project Structure
 
-- PascalCase for all folders who have a React components. And all files must start with the folder name.
-- Extension must be .jsx
-- index.js
-- Components must be singular
-- All component folder must have two files : 
-  - ComponentName.jsx
-  - A test file (even if empty) like ComponentName.test.js
-  - index.js (Must contain `export { default } from './ButtonText'`
+- Use PascalCase for all directory who have a React components. All files inside this directory have to start with the directory name
+> Why? This rules improve clarity. You'll be able to find easily a component
 
+- React component files extension must be .jsx
+> Why? We decided to adopt .jsx extension to separate quickly know if a file export a React component 
 
-  Example :
-  - Button/
-    - ButtonText/
-      - ButtonText.jsx
-      - ButtonText.test.js
-      - index.js 
-    - ButtonFloat/
-  - Card/
-    - CardActivity/
-    - CardMember/
-  - ~~Views/~~
-    - ~~Activity~~
+- Each React component must have to index.js on the same level. Index.js have to import and export the React component
+> Why? To be able to import directly the folder instead of import specific file
+
+- Component names must be singular
 
 
-- No Number in a name Like ~~Button2 or Card2~~
+- Don't use number inside component name. Replace ~~Button2 by something more clear **ButtonWithImage*
+> Why? Favor explicit name to improve readability
 
-**File structure :** 
+- All component directory must have this structure
 
-root/app/
 
-- components (Contains all reusable components)
-- containers
-  - commons (Independent containers like Header or  Footer)
-  - layouts (Dependent containers like Flex or Grid)
-  - layers (Layers like MesoLayers)
-- pages (All pages)
-- config
-  - constants (All independant constant like routes)
-  - libs (Config for libs like Google Map or Apollo)
-- static (All statics files like images, fonts, ...)
-- styles (All globals styles)
-  - themes (Theme like normal or dark mode)
+    ComponentName.jsx
+    ComponentName.test.js
+    ComponentName.style.js
+    index.js
+
+
+###### Directory structure
+
+
+    Button/
+      ButtonText/
+        ButtonText.jsx
+        ButtonText.test.js
+        index.js 
+      ButtonFloat/
+    Card/
+      CardActivity/
+      CardMember/
+
+
+###### NextJS app structure
+
+
+    root/app/
+      components (reusable components)
+      containers
+        commons (independent containers like Header or Footer)
+        layouts (dependent containers like Flex or Grid)
+        layers (layers like MesoLayer)
+      pages
+      config
+        constants (independent constant like routes)
+        libs (libs config)
+      static (statics files like images, fonts...)
+      styles
+        themes (Theme like normal or dark mode)
+
 
 
 
