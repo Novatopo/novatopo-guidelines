@@ -20,6 +20,7 @@ This style guide is mostly based on the standards that are currently prevalent i
   1. [Tags](#tags)
   1. [Methods](#methods)
   1. [`isMounted`](#ismounted)
+  1. [File Structure] (#filestructure)
 
 ## Basic Rules
 
@@ -645,5 +646,53 @@ We don’t recommend using indexes for keys if the order of items may change.
   > Why? [`isMounted` is an anti-pattern][anti-pattern], is not available when using ES6 classes, and is on its way to being officially deprecated.
 
   [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
+  
+ ## Project Structure
+**Rules :**
+
+- PascalCase for all folders who have a React components. And all files must start with the folder name.
+- Extension must be .jsx
+- index.js
+- Components must be singular
+- All component folder must have two files : 
+  - ComponentName.jsx
+  - A test file (even if empty) like ComponentName.test.js
+  - index.js (Must contain `export { default } from './ButtonText'`
+
+
+  Example :
+  - Button/
+    - ButtonText/
+      - ButtonText.jsx
+      - ButtonText.test.js
+      - index.js 
+    - ButtonFloat/
+  - Card/
+    - CardActivity/
+    - CardMember/
+  - ~~Views/~~
+    - ~~Activity~~
+
+
+- No Number in a name Like ~~Button2 or Card2~~
+
+**File structure :** 
+
+root/app/
+
+- components (Contains all reusable components)
+- containers
+  - commons (Independent containers like Header or  Footer)
+  - layouts (Dependent containers like Flex or Grid)
+  - layers (Layers like MesoLayers)
+- pages (All pages)
+- config
+  - constants (All independant constant like routes)
+  - libs (Config for libs like Google Map or Apollo)
+- static (All statics files like images, fonts, ...)
+- styles (All globals styles)
+  - themes (Theme like normal or dark mode)
+
+
 
 **[⬆ back to top](#table-of-contents)**
