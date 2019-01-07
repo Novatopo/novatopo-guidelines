@@ -20,7 +20,7 @@ This style guide is mostly based on the standards that are currently prevalent i
   1. [Tags](#tags)
   1. [Methods](#methods)
   1. [`isMounted`](#ismounted)
-  1. [File Structure](#filestructure)
+  1. [Project Structure](#project-structure)
 
 ## Basic Rules
 
