@@ -21,7 +21,7 @@ This style guide is mostly based on the standards that are currently prevalent i
   1. [Methods](#methods)
   1. [`isMounted`](#ismounted)
   1. [Project Structure](#project-structure)
-    - [Directory structure](#directory-structure)
+    - [Components structure](#components-structure)
     - [NextJS app structure](#NextJS-app-structure)
 
 ## Basic Rules
@@ -675,13 +675,15 @@ We don’t recommend using indexes for keys if the order of items may change.
     index.js
 
 
-###### Directory structure
+###### Components structure
 
 
     Button/
       ButtonText/
         ButtonText.jsx
         ButtonText.test.js
+        ButtonText.style.js
+        (ButtonText.gql)
         index.js 
       ButtonFloat/
     Card/
